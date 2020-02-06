@@ -22,6 +22,9 @@ body {
     grid-row-gap: 0.5em;
     grid-auto-rows: minmax(100px, auto);
 
+    padding: 0;
+    margin: 0;
+
     @media (prefers-color-scheme: light) {
         color: #bb1200;
         background-color: black;
@@ -33,6 +36,8 @@ body {
     }
 
     @include small-screen {
+        grid-template-columns: auto;
+
         @media (prefers-color-scheme: light) {
             color: #FF3400;
             background-color: black;
@@ -65,6 +70,8 @@ div.poem {
     }
 
     @include small-screen {
+        grid-column: 1;
+
         @media (prefers-color-scheme: light) {
             border-color: #FF3400;
         }
