@@ -7,3 +7,4 @@ site:
 	@mv style.css _site/style.css
 	@mv style.css.map _site/style.css.map
 	@cp style.scss _site/style.scss
+	@cp *.ttf _site/

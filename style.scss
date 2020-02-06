@@ -1,3 +1,80 @@
+@font-face {
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: bold;
+    src: url('Tangerine_Bold.ttf')
+}
+
+@mixin small-screen {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+html {
+    font-size: 200%;
+}
+
 body {
-    background-color: black;
+    display: grid;
+    grid-template-columns: auto max-content auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0.5em;
+    grid-auto-rows: minmax(100px, auto);
+
+    @media (prefers-color-scheme: light) {
+        color: #bb1200;
+        background-color: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: #bb1200;
+        background-color: black;
+    }
+
+    @include small-screen {
+        @media (prefers-color-scheme: light) {
+            color: #FF3400;
+            background-color: black;
+        }
+        @media (prefers-color-scheme: dark) {
+            color: #FF3400;
+            background-color: black;
+        }
+    }
+}
+
+div.poem {
+    grid-column: 2;
+    grid-row: 2;
+
+    margin-bottom: 2em;
+    padding: 1em;
+
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    line-height: 1.25;
+
+    @media (prefers-color-scheme: light) {
+        border: 2px solid #330000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        border: 2px solid #330000;
+    }
+
+    @include small-screen {
+        @media (prefers-color-scheme: light) {
+            border-color: #FF3400;
+        }
+        @media (prefers-color-scheme: dark) {
+            border-color: #FF3400;
+        }
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
 }
